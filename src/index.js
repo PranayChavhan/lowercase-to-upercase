@@ -7,7 +7,7 @@ import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App heading='Convert Lowercase to Uppercase'/>
+    <App heading='Lowercase Uppercase Conversion'/>
   </React.StrictMode>,
   document.getElementById('root')
 );
