@@ -1,2 +1,3 @@
 This is small web app for converting lowercase to uppercase
-![Screenshot (92)](https://user-images.githubusercontent.com/85397500/147813731-7e7d6634-26f1-4316-a11e-707261dd3abe.png)
+![Screenshot (93)](https://user-images.githubusercontent.com/85397500/147820825-c7b69941-5a2f-46bb-81ba-ba5ce1482234.png)
+![Screenshot (94)](https://user-images.githubusercontent.com/85397500/147820830-2927f863-23e4-4d82-8f81-d3ea5468a95c.png)
