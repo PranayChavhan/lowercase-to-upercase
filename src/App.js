@@ -1,7 +1,21 @@
 import React, { useState } from "react";
+import Alert from "./Alert";
 import "./App.css";
 
 function App(props) {
+
+  const [alert, setAlert] = useState(null);
+
+  const showAlert = (message, type) =>{
+    setAlert({
+      msg: message,
+      type: type
+    });
+    setTimeout(()=>{
+      setAlert(null)
+    }, 1500)
+  }
+
   const [btnText, setBtnText] = useState("Light Mode");
 
   const [myStyle, setMuStyle] = useState({
@@ -16,34 +30,40 @@ function App(props) {
         backgroundColor: "white",
       });
       setBtnText("Light Mode");
+      showAlert("Light mode has been enebled", "success");
     } else {
       setMuStyle({
         color: "white",
         backgroundColor: "#282c34",
       });
       setBtnText("Dark Mode");
+      showAlert("Dark mode has been enebled", "success");
     }
   };
 
   const handelExtraSpace = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    showAlert("Extra space has been removed", "success");
   };
 
   const handelCopy = () => {
     let text = document.getElementById("exampleFormControlTextarea1");
     text.select();
     navigator.clipboard.writeText(text.value);
+    showAlert("Text has been copied to clipboard", "success");
   };
 
   const handellowClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    showAlert("Text Converted into lowercase", "success");
   };
 
   const handelUpClick = () => {
     let newText = text.toUpperCase();
     setText(newText);
+    showAlert("Text Converted into UPPERCASE", "success");
   };
 
   const handelOnChange = (event) => {
@@ -54,7 +74,8 @@ function App(props) {
   return (
     <>
       <div className="App" style={myStyle}>
-        <div className="container pt-3 mb-3">
+        
+        <div className="container pt-2 mb-2">
           <div className="form-check form-switch">
             <input
               className="form-check-input"
@@ -68,6 +89,7 @@ function App(props) {
             </label>
           </div>
         </div>
+        <Alert alert={alert}/>
 
         <div className="container">
           <div className="mt-4">
